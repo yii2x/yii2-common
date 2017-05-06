@@ -27,5 +27,25 @@ Usage
 
 Once the extension is installed, simply use it in your code by  :
 
+
+Model Configuration:
+--------------------
 ```php
-<?= \\yii2x\common\AutoloadExample::widget(); ?>```
+
+    public function behaviors()
+    {
+        return [           
+
+	    [
+                'class' => \yii2x\common\behaviors\IpAddressBlameableBehavior::className(),
+                'createdIpAttribute' => 'created_ip',
+                'updatedIpAttribute' => 'updated_ip',
+            ],                       
+            [
+                'class' => \yii2x\common\behaviors\JsonFieldBehavior::className(),
+                'attributes' => ['params']
+            ]
+        ];
+    }
+
+```
