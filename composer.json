@@ -1,0 +1,31 @@
+{
+    "name": "yii2x/yii2-common",
+    "description": "YII2 Common",
+    "type": "library",
+    "keywords": ["yii2","extension","library","behaviors","helpers"],
+    "license": "BSD-3-Clause",
+    "authors": [
+        {
+            "name": "Yuriy Basov",
+            "email": "basowy@gmail.com"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/yii2x/yii2-common/issues",
+        "source": "https://github.com/yii2x/yii2-common"
+    },       
+    "require": {
+        "yiisoft/yii2": "*"
+    },
+    "repositories":[
+        {
+            "type": "git",
+            "url": "https://github.com/yii2x/yii2-common"
+        }
+    ],   
+    "autoload": {
+        "psr-4": {
+            "\\yii2x\\common\\": ""
+        }
+    }
+}
