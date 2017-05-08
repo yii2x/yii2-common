@@ -23,14 +23,14 @@ class JsonFieldBehavior extends Behavior
     public function events()
     {
         return [
-            \yii\db\ActiveRecord::EVENT_AFTER_FIND => 'onAfterFind',
-//            \yii\db\ActiveRecord::EVENT_BEFORE_INSERT => 'onBeforeSave',
-//            \yii\db\ActiveRecord::EVENT_BEFORE_UPDATE => 'onBeforeSave',
-            \yii\db\ActiveRecord::EVENT_BEFORE_VALIDATE => 'onBeforeValidate',
+            \yii\db\ActiveRecord::EVENT_AFTER_FIND => 'decodeJson',
+            \yii\db\ActiveRecord::EVENT_AFTER_INSERT => 'decodeJson',
+            \yii\db\ActiveRecord::EVENT_AFTER_UPDATE => 'decodeJson',
+            \yii\db\ActiveRecord::EVENT_BEFORE_VALIDATE => 'encodeJson',
         ];
     } 
 
-    public function onAfterFind($event){
+    public function decodeJson($event){
         
         foreach($this->attributes as $attribute){
             $value = $this->owner->$attribute;
@@ -48,7 +48,7 @@ class JsonFieldBehavior extends Behavior
         }
     }    
     
-    public function onBeforeValidate($event){
+    public function encodeJson($event){
   
         foreach($this->attributes as $index => $attribute){
 
