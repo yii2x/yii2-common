@@ -15,7 +15,8 @@
         "source": "https://github.com/yii2x/yii2-common"
     },       
     "require": {
-        "yiisoft/yii2": "*"
+        "yiisoft/yii2": "*",
+        "bower-asset/ace-buids": "*"
     },
     "repositories":[
         {
