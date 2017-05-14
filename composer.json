@@ -16,7 +16,7 @@
     },       
     "require": {
         "yiisoft/yii2": "*",
-        "bower-asset/ace-buids": "*"
+        "bower-asset/ace-builds": "*"
     },
     "repositories":[
         {
